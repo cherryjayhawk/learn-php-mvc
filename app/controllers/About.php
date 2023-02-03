@@ -1,12 +1,28 @@
 <?php
 
-class About {
+class About extends Controller {
 
-    // public function __construct() {
-    //     $this->index();
-    // }
+    public function index( $name = 'chad', $job = 'Engineer') {
+        $data = [];
+        $data['page'] = 'About';
+        $data['name'] = $name;
+        $data['job'] = $job;
 
-    public function index() {
-        require_once("../app/views/home/about.html");
+        $view = new Controller;
+        $view->view('templates/header');
+        $view->view('about/index', $data);
+        $view->view('templates/footer');
+    }
+
+    public function page( $name = 'chad', $job = 'Engineer') {
+        $data = [];
+        $data['page'] = 'About';
+        $data['name'] = $name;
+        $data['job'] = $job;
+
+        $view = new Controller;
+        $view->view('templates/header');
+        $view->view('about/page', $data);
+        $view->view('templates/footer');
     }
 }
