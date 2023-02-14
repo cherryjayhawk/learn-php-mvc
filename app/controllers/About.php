@@ -2,27 +2,18 @@
 
 class About extends Controller {
 
-    public function index( $name = 'chad', $job = 'Engineer') {
+    public function index( $name = 'Gigachad', $job = 'Brogrammer', $age = '20', $interest = 'Coffee') {
         $data = [];
         $data['page'] = 'About';
         $data['name'] = $name;
         $data['job'] = $job;
+        $data['age'] = $age;
+        $data['interest'] = $interest;
 
         $view = new Controller;
-        $view->view('templates/header');
+        $view->view('templates/header', $data);
         $view->view('about/index', $data);
         $view->view('templates/footer');
     }
 
-    public function page( $name = 'chad', $job = 'Engineer') {
-        $data = [];
-        $data['page'] = 'About';
-        $data['name'] = $name;
-        $data['job'] = $job;
-
-        $view = new Controller;
-        $view->view('templates/header');
-        $view->view('about/page', $data);
-        $view->view('templates/footer');
-    }
 }

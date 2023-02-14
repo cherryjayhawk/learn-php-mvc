@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: hsl(194.7,53.3%,79%);
+}
+
+.container {
+    box-shadow: 1px 1px 2px 1px gray ;
+    border: 2px solid grey;
+    width: 96vw;
+    height: 92vh;   
+    border-radius: 8px;
+    background-color: hsl(194.7,53.3%,90%);
+}

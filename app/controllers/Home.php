@@ -1,25 +1,20 @@
 <?php
 
 class Home extends Controller {
-    // public function __construct() {
-    //     $this->index();
-    // }
-    // protected $page;
-    // protected $name;
-    // protected $job;
-    
 
-    public function index( $name = 'chad', $job = 'Engineer') {
+    public function index() {
         $data = [];
         $data['page'] = 'Home';
-        $data['name'] = $name;
-        $data['job'] = $job;
-        var_dump($data);
-        // require_once('../app/views/')
-        // require_once('../app/main/Controller.php');
-        $view = new Controller;
-        $view->view('templates/header');
-        $view->view('home/index', $data);
-        $view->view('templates/footer');
+
+        // models
+        $data['name'] = $this->model('UserModel')->getName();
+        $data['job'] = $this->model('UserModel')->getJob();
+        $data['age'] = $this->model('UserModel')->getAge();
+        $data['interest'] = $this->model('UserModel')->getInterest();
+
+        // views
+        $this->view('templates/header', $data);
+        $this->view('home/index', $data);
+        $this->view('templates/footer');
     }
 }
